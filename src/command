@@ -1,0 +1,16 @@
+#!/bin/bash
+
+echo ' ${COL_RED} Welcome to <name> network tools!'
+echo ' ${COL_RED} Run the command <name> <help> to get a list of runable commands'
+
+
+check(){
+
+
+    case "$1" in
+        [y])
+        echo "hello world"
+        return 1;
+        ;;
+    esac
+}
