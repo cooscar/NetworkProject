@@ -32,7 +32,7 @@ elif [ "$1" == "port"]; then
 elif [ "$1" == "getip" ]; then
     python3 "$SCRIPT_DIR/getip.py"
 
-else; then
+else
     echo "please refer to: luma help For further instructions"
 fi
 
