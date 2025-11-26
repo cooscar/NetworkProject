@@ -13,6 +13,9 @@ if __name__ == "__main__":
             except KeyboardInterrupt:
                 print("\n Test cancelled by user")
                 break
+            except PermissionError:
+                print("\n You require elevated permissions to use this")
+                break
 
 
 
