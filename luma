@@ -1,0 +1,20 @@
+#!/bin/bash
+
+SCRIPT_DIR="/usr/local/lib/luma/commands"
+
+
+# python3 "$SCRIPT_DIR/script.py"
+
+
+if [ "$1" == "help" ]; then
+    echo "list of available commands:"
+
+    echo " help      - show this help message"
+    echo " start     - start the service"
+    echo " speed     - test internet speed"
+
+elif [ "$1" == "speed" ]; then
+    python3 "$SCRIPT_DIR/speed.py"
+
+fi
+
