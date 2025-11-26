@@ -23,8 +23,8 @@ elif [ "$1" == "ping" ]; then
     fi
 
 elif [ "$1" == "port" ]; then
-    if [ -n "$5" ]; then
-        python3 "$SCRIPT_DIR/PortTest.py" "$2" "$3" "$4" "$5"
+    if [ -n "$6" ]; then
+        python3 "$SCRIPT_DIR/PortTest.py" "$2" "$3" "$4" "$5" "$6"
     else
         echo "Please use the following syntax:"
         echo "luma port -I <ip> -P <port> -T (TCP) -U (UDP)"
