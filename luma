@@ -2,10 +2,8 @@
 
 SCRIPT_DIR="/usr/local/lib/luma/commands"
 
-
 if [ "$1" == "help" ]; then
     echo "list of available commands:"
-
     echo " help      - show this help message"
     echo " speed     - test internet speed"
     echo " ping      - ping a target ip or website"
@@ -13,26 +11,28 @@ if [ "$1" == "help" ]; then
     echo " port      - simulate a TCP or UDP connection to a specific port"
     echo "              - usage: luma port -I <ip> -P <port> -T {for TCP connection tests} -U {for UDP connection tests}"
     echo " getip     - get your current ip address"
-     
 
 elif [ "$1" == "speed" ]; then
     python3 "$SCRIPT_DIR/speed.py"
 
 elif [ "$1" == "ping" ]; then
     if [ -n "$2" ]; then
-        python3 "$SCRIPT_DIR/IMCP.py $2"
-    else:
-        echo " Please provide a valid ip address for this command: "luma ping {target}""
+        python3 "$SCRIPT_DIR/IMCP.py" "$2"
+    else
+        echo "Please provide a valid IP address for this command: luma ping <target>"
+    fi
 
-elif [ "$1" == "port"]; then
+elif [ "$1" == "port" ]; then
     if [ -n "$5" ]; then
-        python3 "$SCRIPT_DIR/PortTest.py $2 $3 $4 $5"
-    else:
-        echo " Please use the following synthax: luma port -I <ip> -P <port> -T {for TCP connection tests} -U {for UDP connection tests}"
+        python3 "$SCRIPT_DIR/PortTest.py" "$2" "$3" "$4" "$5"
+    else
+        echo "Please use the following syntax:"
+        echo "luma port -I <ip> -P <port> -T (TCP) -U (UDP)"
+    fi
+
 elif [ "$1" == "getip" ]; then
     python3 "$SCRIPT_DIR/getip.py"
 
 else
-    echo "please refer to: luma help For further instructions"
+    echo "please refer to: luma help for further instructions"
 fi
-
