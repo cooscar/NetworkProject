@@ -97,7 +97,7 @@ class TcpSer:
 
 
             if (is_port_open(port, ip, ctype)):
-                print("the port is open")
+                print(f"[+] Port {port} is open")
             else:
                 print("unable to connect to the port")
            

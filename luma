@@ -33,6 +33,12 @@ elif [ "$1" == "port" ]; then
 elif [ "$1" == "getip" ]; then
     python3 "$SCRIPT_DIR/getip.py"
 
+elif [ "$1" == "portscan" ]; then
+    if [ -n "$2" ]; then
+        python3 "$SCRIPT_DIR/portscan.py" "$2" "$3" "$4" "$5"
+    else
+        echo "Please provide a valid IP address for this command: luma portscan <target>"
+    fi
 else
     echo "please refer to: luma help for further instructions"
 fi

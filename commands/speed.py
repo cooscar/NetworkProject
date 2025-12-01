@@ -10,7 +10,7 @@ def checksp(speed):
         print(f'Download speed is: {speed.download()/1000000:.1f} Mbps')
         print(f'Upload speed is: {speed.upload()/1000000:.1f} Mbps')
     except KeyboardInterrupt:
-            print('\nTest cancelled by user')
+            print('\n\n[!] Test cancelled by user')
             exit()
 
 

@@ -11,7 +11,7 @@ if __name__ == "__main__":
                 ping(ip, verbose=True, count=1)
                 time.sleep(1)
             except KeyboardInterrupt:
-                print("\n Test cancelled by user")
+                print("\n\n[!] Test cancelled by user")
                 break
             except PermissionError:
                 print("\n You require elevated permissions to use this")
