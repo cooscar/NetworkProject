@@ -11,6 +11,9 @@ if [ "$1" == "help" ]; then
     echo " port      - simulate a TCP or UDP connection to a specific port"
     echo "              - usage: luma port -I <ip> -P <port> -T {for TCP connection tests} -U {for UDP connection tests}"
     echo " getip     - get your current ip address"
+    echo " portscan  - scan open ports on a target ip"
+    echo "              - usage: luma portscan -I <ip> -R <start> <end> (end is optional - default 65535)"
+    
 
 elif [ "$1" == "speed" ]; then
     python3 "$SCRIPT_DIR/speed.py"
@@ -37,7 +40,7 @@ elif [ "$1" == "portscan" ]; then
     if [ -n "$2" ]; then
         python3 "$SCRIPT_DIR/portscan.py" "$2" "$3" "$4" "$5"
     else
-        echo "Please provide a valid IP address for this command: luma portscan <target>"
+        echo "luma port -I <ip> -R <start> <end> (end is optional - default 65535)"
     fi
 else
     echo "please refer to: luma help for further instructions"

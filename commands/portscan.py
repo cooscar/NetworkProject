@@ -78,7 +78,7 @@ def scan_host(ip, a=1, b=65535):
 
     queue = Queue(); results = []; ts = []
     for _ in range(THREADS):
-        t = threading.Thread(target=worker, args=(ip, q, results), daemon=True)
+        t = threading.Thread(target=worker, args=(ip, queue, results), daemon=True)
         t.start(); ts.append(t)
     for p in range(a, b+1): queue.put(p)
     queue.join()
