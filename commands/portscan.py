@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 import socket, threading, sys, ipaddress
 from queue import Queue
 from datetime import datetime
